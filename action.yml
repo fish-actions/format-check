@@ -1,0 +1,15 @@
+---
+name: fish-actions/format-check
+
+description: Check the formatting of all fish files in your repository
+
+branding:
+  icon: align-left
+  color: blue
+
+runs:
+  using: composite
+
+  steps:
+    - run: fish_indent --check $GITHUB_WORKSPACE/**.fish
+      shell: fish {0}
